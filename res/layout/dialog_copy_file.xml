@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:minWidth="280dp"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageview_newfolder_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/menu_copy"
+            android:src="@android:drawable/ic_menu_more" />
+
+        <TextView
+            android:id="@+id/textview_newfolder_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imageview_newfolder_title"
+            android:layout_alignTop="@id/imageview_newfolder_title"
+            android:layout_toRightOf="@id/imageview_newfolder_title"
+            android:gravity="center_vertical"
+            android:text="@string/file_copy"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <ViewSwitcher
+        android:id="@+id/viewswitcher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/layout_copying"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:id="@+id/imageview_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dp"
+                android:text="@string/copying"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_copy_paused"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textview_message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ViewSwitcher>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dp" >
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1.0"
+            android:text="@string/cancel"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_skip"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1.0"
+            android:text="@string/skip"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/button_replace"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1.0"
+            android:text="@string/replace"
+            android:textSize="16sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

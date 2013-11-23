@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:minWidth="344dp"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageview_rename_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/dialogrename_title"
+            android:src="@android:drawable/ic_menu_more" />
+
+        <TextView
+            android:id="@+id/textview_rename_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imageview_rename_title"
+            android:layout_alignTop="@id/imageview_rename_title"
+            android:layout_toRightOf="@id/imageview_rename_title"
+            android:gravity="center_vertical"
+            android:text="@string/dialogrename_title"
+            android:textColor="@android:color/white"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="2dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="2dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/file_name"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textview_currentname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="2dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="2dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/dialogrename_rename_text"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/edittext_rename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:hint="@string/edittext_hint"
+            android:paddingBottom="2dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="8dp"
+            android:paddingTop="2dp"
+            android:singleLine="true"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/button_set_rename"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1.0"
+            android:minHeight="50dp"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp"
+            android:text="@string/set"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/button_cancel_rename"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1.0"
+            android:minHeight="50dp"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp"
+            android:text="@string/cancel"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+</LinearLayout>

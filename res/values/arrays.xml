@@ -1,0 +1,13 @@
+<resources>
+	<string-array name="show_type">
+	    <item>简洁列表</item>
+	    <item>详细列表</item>
+	    <item>缩略图</item>
+	</string-array>   
+	
+	<string-array name="show_type_value">
+	    <item>SimpleList</item>
+	    <item>DetailedList</item>
+	    <item>Thumbnails</item>
+	</string-array>
+</resources>

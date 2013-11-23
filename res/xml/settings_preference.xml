@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory 
+	    android:key="视图设置"
+	    android:summary="说明"
+	    >
+	    <ListPreference 
+	        android:key="@string/setting_thumbnails_list_preference_key"
+	        android:dialogTitle="选择视图模式"
+	        android:entries="@array/show_type"
+	        android:entryValues="@array/show_type_value"
+	        android:summary="以详细模式显示列表"
+	        android:title="视图模式"
+	        />
+	    
+	    <CheckBoxPreference
+	        android:key="@string/setting_first_folder_checkbox_preference_key"
+	        android:title="文件夹优先"
+	        android:summary="始终先列出文件夹，再列出剩余的文件"
+	        android:defaultValue="true"
+	        />
+	    
+	    <CheckBoxPreference
+	        android:key="@string/setting_show_hidden_checkbox_preference_key"
+	        android:title="显示隐藏文件"
+	        android:summary="显示隐藏文件和文件夹（以“.”号开头）"
+	        android:defaultValue="false"
+	        />
+	    
+	    <CheckBoxPreference
+	        android:key="@string/setting_save_last_open_folder_checkbox_preference_key"
+	        android:title="记录最后打开的目录"
+	        android:summary="记录最后打开的目录"
+	        android:defaultValue="true"
+	        />
+	    
+	</PreferenceCategory>
+</PreferenceScreen>

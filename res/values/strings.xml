@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FileBrowser</string>
+    <string name="menu_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="menu_open_with">Open With</string>
+    <string name="menu_rename">Rename</string>
+    <string name="menu_delete">Delete</string>
+    <string name="menu_copy">Copy</string>
+    <string name="menu_move">Move</string>
+    <string name="menu_preferences">Preferences</string>
+    <string name="menu_home_dir">Set as HOME dir</string>
+    <string name="menu_create_file">Create file</string>
+    <string name="menu_smb">SMB</string>
+    <string name="menu_create_folder">Create folder</string>
+    
+    <string name="deletefile_title">Delete File?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    
+    <string name="dialogrename_title">Rename</string>
+    <string name="file_name">Name:</string>
+    <string name="dialogrename_rename_text">rename: </string>
+    <string name="edittext_hint"/>
+    <string name="set">Set</string>
+    
+    <string name="replace">replace</string>
+    <string name="skip">skip</string>
+    <string name="copying">Copying</string>
+    <string name="file_copy">File copy</string>
+    <string name="cannot_copy_here">Can not copy here</string>
+    <string name="copy_failed">Copy failed</string>
+    <string name="copy_complete">Copy Complete</string>
+    <string name="cut_failed">Cut failed</string>
+    <string name="cut_complete">Cut Complete</string>
+    <string name="more_than_1_item">more than 1 item</string>
+    
+    <string name="file_property_name">Name:</string>
+    <string name="file_property_file_type">Type:</string>
+    <string name="hint"></string>
+    <string name="file_property_title">Title:</string>
+    <string name="file_property_date">Date:</string>
+    <string name="open_with">Open With</string>
+    <string name="unable_open_file">unable to open this type of file</string>
+    <string name="paged_init_text">1/1</string>
+    <string name="property">Property</string>
+    
+    <string name="go_up">Go up</string>
+    
+    <string name="name_can_not_empty">Name can not be empty</string>
+    <string name="name_can_not_be_same">Name can not be same</string>
+    <string name="default_application">Not appointed by default application</string>
+    
+    <string name="open_as">Open as</string>
+    <string name="text">Text</string>
+    <string name="audio">Audio</string>
+    <string name="video">Video</string>
+    <string name="image">Image</string>
+    <string name="SDCard">SD Card</string>
+    <string name="Flash">Flash</string>
+    <string name="openlist_title">Open with</string>
+    <string name="checkbox_text">Set as the default app</string>
+    <string name="previous">previous</string>
+    <string name="next">next</string>
+    <string name="cover">cover</string>
+    <string name="unable_to_open_this_type_of_file">unable to open this type of file</string>
+    <string name="can_rename_only_one_item_at_one_time">can rename only one item at one time</string>
+    <string name="Succeed_setting">Succeed setting</string>
+    <string name="Fail_setting">Fail setting</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Paste">Paster</string>
+    
+    <string name="create_file_title">Create File</string>
+    <string name="create_folder_title">Create Folder</string>
+    
+    <string name="setting_thumbnails_list_preference_key">setting_thumbnails_list_preference_key</string>
+    <string name="setting_first_folder_checkbox_preference_key">setting_first_folder_checkbox_preference_key</string>
+    <string name="setting_show_hidden_checkbox_preference_key">setting_show_hidden_checkbox_preference_key</string>
+    <string name="setting_save_last_open_folder_checkbox_preference_key">setting_save_last_open_folder_checkbox_preference_key</string>
+</resources>

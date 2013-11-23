@@ -1,0 +1,40 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="dialog_no_title" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    
+    <style name="button_black" parent="@android:style/Widget.Button">
+        <item name="android:background">@android:color/black</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    
+    <style name="checkbox_multiple_style" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_multiple_button</item>
+    </style>
+    
+</resources>
