@@ -1,6 +1,6 @@
 *.class
-
+/gen
+.settings/
 # Package Files #
-*.jar
 *.war
 *.ear
