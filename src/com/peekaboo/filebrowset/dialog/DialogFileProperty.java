@@ -11,14 +11,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.database.DataSetObserver;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
-import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.WindowManager.LayoutParams;
 import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -39,7 +35,7 @@ import com.peekaboo.filebrowset.utils.DateTimeUtil;
 import com.peekaboo.filebrowset.utils.FileUtil;
 
 /**
- * @author joy
+ * @author peekaboo
  * 
  */
 public class DialogFileProperty extends Dialog
@@ -161,34 +157,6 @@ public class DialogFileProperty extends Dialog
             }
         });
 
-//        mGridView.registerOnAdapterChangedListener(new OnyxGridView.OnAdapterChangedListener()
-//        {
-//
-//            @Override
-//            public void onAdapterChanged()
-//            {
-//                mAdapter = (SelectionAdapter) mGridView.getAdapter();
-//                DialogFileProperty.this.setSelection(mAdapter.getSelection());
-//
-//                mAdapter.registerDataSetObserver(new DataSetObserver()
-//                {
-//                    @Override
-//                    public void onChanged()
-//                    {
-//                        EpdController.invalidate(mSwitcher, UpdateMode.GU);
-//                        DialogFileProperty.this.updateTextViewProgress();
-//                    }
-//
-//                    @Override
-//                    public void onInvalidated()
-//                    {
-//                        EpdController.invalidate(mSwitcher, UpdateMode.GU);
-//                        DialogFileProperty.this.updateTextViewProgress();
-//                    }
-//                });
-//            }
-//        });
-
         mGridView.setOnItemClickListener(new OnItemClickListener()
         {
             public void onItemClick(AdapterView<?> parent, View view,
@@ -256,14 +224,6 @@ public class DialogFileProperty extends Dialog
             }
             else {
                 String defaultAppName = "";
-//                OnyxAppPreference p = OnyxAppPreferenceCenter.getApplicationPreference(mContext, mFile);
-//                if (p != null) {
-//                    defaultAppName = p.getAppName();
-//                }
-//                else {
-//                    defaultAppName = mContext.getString(R.string.default_application);
-//                }
-
                 String[] app_names = new String[mListInfos.size()];
                 int selection = -1;
                 for (int i = 0; i < mListInfos.size(); i++) {
@@ -278,7 +238,6 @@ public class DialogFileProperty extends Dialog
                 mAdapter = new SelectionAdapter(mContext, mGridView, app_names, selection);
                 mGridView.setAdapter(mAdapter);
 
-//                mAdapter.getPaginator().setPageSize(mListInfos.size());
             }
         }
         else {
@@ -289,17 +248,6 @@ public class DialogFileProperty extends Dialog
             mGridView.setVisibility(View.GONE);
             mLayout.setVisibility(View.GONE);
         }
-
-//        DisplayMetrics metrics = new DisplayMetrics();
-//        WindowManager manager = getWindow().getWindowManager();
-//        manager.getDefaultDisplay().getMetrics(metrics);
-//        LayoutParams params = getWindow().getAttributes();
-//        if (metrics.widthPixels > metrics.heightPixels) {
-//            params.width = (int) (metrics.heightPixels * 0.9);
-//        }
-//        else {
-//            params.width = (int) (metrics.widthPixels * 0.9);
-//        }
 
         mHandlerSet = new Handler()
         {
@@ -333,6 +281,7 @@ public class DialogFileProperty extends Dialog
 
     private void updateTextViewProgress()
     {
+    	//TODO
     }
 
 }

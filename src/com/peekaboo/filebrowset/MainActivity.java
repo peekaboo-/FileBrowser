@@ -37,6 +37,11 @@ import com.peekaboo.filebrowset.task.LoadingDialogTask;
 import com.peekaboo.filebrowset.task.LoadingDialogTask.OnLoadingListener;
 import com.peekaboo.filebrowset.utils.OpenFileUtil;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class MainActivity extends BaseActivity implements OnClickListener,
 		OnItemClickListener, OnItemLongClickListener {
 
@@ -79,7 +84,6 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 //	@Override
 //	protected void onPause() {
 //		super.onPause();
-////		System.out.println("aaa 之类的执行了");
 ////		if (MyApplication.isSaveLastOpenFolder()) {
 ////			Editor config_editor = mSharedPreferences.edit();
 ////			config_editor.putString(LAST_OPEN_FOLDER, mCurrentPath);

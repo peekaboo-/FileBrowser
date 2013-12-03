@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.peekaboo.filebrowset.R;
 
 /**
- * @author qingyue
+ * @author peekaboo
  *
  */
 public class DialogOpenWith extends Dialog

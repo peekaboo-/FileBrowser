@@ -2,6 +2,11 @@ package com.peekaboo.filebrowset;
 
 import android.graphics.Bitmap;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class GridItemData {
 
 	private String name = null;

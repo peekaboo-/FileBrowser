@@ -4,6 +4,11 @@ import java.util.Date;
 
 import android.graphics.Bitmap;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class FileItemData extends GridItemData
 {
 

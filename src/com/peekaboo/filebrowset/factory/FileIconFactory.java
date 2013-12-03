@@ -5,6 +5,11 @@ import java.util.Map;
 
 import com.peekaboo.filebrowset.R;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class FileIconFactory {
 
 	public static int getIconResourceBySuffixName(String suffixName) {

@@ -17,6 +17,11 @@ import com.peekaboo.filebrowset.FileType;
 import com.peekaboo.filebrowset.R;
 import com.peekaboo.filebrowset.handler.FileOperationHandler;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class DialogCreateFileOrFolder extends Dialog {
 	public static boolean mIsCreateFile = true;
 	private EditText mEditTextFileName = null;

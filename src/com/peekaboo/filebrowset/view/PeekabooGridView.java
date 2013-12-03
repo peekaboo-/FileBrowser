@@ -11,6 +11,11 @@ import android.widget.ListAdapter;
 import com.peekaboo.filebrowset.MyApplication;
 import com.peekaboo.filebrowset.data.ViewType;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class PeekabooGridView extends GridView{
 	
 	public interface OnViewTypeChangeListener{

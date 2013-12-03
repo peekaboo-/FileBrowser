@@ -28,6 +28,11 @@ import com.peekaboo.filebrowset.dialog.DialogOpenWith;
 import com.peekaboo.filebrowset.interfaces.IFileOperation;
 import com.peekaboo.filebrowset.utils.FileUtil;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class FileOperationHandler implements IFileOperation
 {
     private List<FileItemData> mFileList = new ArrayList<FileItemData>();
@@ -146,18 +151,7 @@ public class FileOperationHandler implements IFileOperation
                     public void onApplicationSelected(ResolveInfo info,
                             boolean makeDefault)
                     {
-//                        if (ActivityUtil.startActivitySafely((Activity)mContext, intent, info.activityInfo)) {
-//                            if (item instanceof BookItemData) {
-//                                BookItemData book = (BookItemData)item;
-//                                
-//                                RefValue<OnyxMetadata> metadata = new RefValue<OnyxMetadata>();
-//                                RefValue<String> err_msg = new RefValue<String>();
-//                                if (CmsCenterHelper.getOrCreateMetadata(mContext, book, metadata, err_msg)) {
-//                                    book.setMetadata(metadata.getValue());
-//                                    CmsCenterHelper.updateRecentReading(mContext, book, metadata.getValue()); 
-//                                }
-//                            }
-//                        }
+                    	//TODO
                     }
 
                 });

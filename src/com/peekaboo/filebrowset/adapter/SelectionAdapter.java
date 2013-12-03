@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.peekaboo.filebrowset.R;
 
 /**
- * @author Administrator
+ * @author peekaboo
  *
  */
 public class SelectionAdapter extends BaseAdapter

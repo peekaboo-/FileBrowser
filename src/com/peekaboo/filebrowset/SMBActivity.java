@@ -7,7 +7,6 @@ import java.util.List;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,6 +22,11 @@ import com.peekaboo.filebrowset.smb.RemoteAccessUtil;
 import com.peekaboo.filebrowset.task.LoadingDialogTask;
 import com.peekaboo.filebrowset.task.LoadingDialogTask.OnLoadingListener;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class SMBActivity extends BaseActivity implements OnItemClickListener {
 
 	public static final String REMOTE_FILE_PATH = "REMOTE_FILE_PATH";

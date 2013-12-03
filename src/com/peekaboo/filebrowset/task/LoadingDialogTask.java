@@ -6,6 +6,11 @@ import android.os.AsyncTask;
 
 import com.peekaboo.filebrowset.interfaces.ILoadingWork;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class LoadingDialogTask extends AsyncTask<Object, Integer, Object>{
 
 	private OnLoadingListener mOnLoadingListener = null;

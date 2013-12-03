@@ -10,6 +10,11 @@ import android.widget.EditText;
 import com.peekaboo.filebrowset.R;
 import com.peekaboo.filebrowset.SMBActivity;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class SMBConnectionDialog extends Dialog {
 
 	private Button mButtonOk = null;

@@ -11,6 +11,11 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class SettingsActivity extends PreferenceActivity {
 	private PreferenceManager mPreferenceManager = null;
 	private ListPreference mListPreferenceThumbnailsSetting = null;

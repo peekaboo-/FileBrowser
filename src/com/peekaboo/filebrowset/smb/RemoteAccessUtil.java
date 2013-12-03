@@ -16,17 +16,21 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import com.peekaboo.filebrowset.FileItemData;
-import com.peekaboo.filebrowset.FileType;
-import com.peekaboo.filebrowset.GridItemData;
-import com.peekaboo.filebrowset.MyApplication;
-import com.peekaboo.filebrowset.R;
-import com.peekaboo.filebrowset.data.GoUpItemData;
-
 import jcifs.smb.SmbFile;
 import jcifs.smb.SmbFileInputStream;
 import jcifs.smb.SmbFileOutputStream;
 
+import com.peekaboo.filebrowset.FileItemData;
+import com.peekaboo.filebrowset.FileType;
+import com.peekaboo.filebrowset.GridItemData;
+import com.peekaboo.filebrowset.R;
+import com.peekaboo.filebrowset.data.GoUpItemData;
+
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class RemoteAccessUtil {
 
 	// /**

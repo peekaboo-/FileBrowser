@@ -8,19 +8,17 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.pm.ResolveInfo;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.peekaboo.filebrowset.R;
 
 /**
- * @author joy
+ * @author peekaboo
  *
  */
 public class GridViewApplicationOpenListAdapter extends BaseAdapter

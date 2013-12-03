@@ -11,6 +11,11 @@ import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class BaseActivity extends Activity {
 	
 	private static final String TAG = "BaseActivity";

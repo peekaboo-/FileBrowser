@@ -13,6 +13,11 @@ import com.peekaboo.filebrowset.R;
 import com.peekaboo.filebrowset.adapter.FileBrowsetAdapter;
 import com.peekaboo.filebrowset.handler.FileOperationHandler;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class DialogFileRemove extends Dialog
 {
 

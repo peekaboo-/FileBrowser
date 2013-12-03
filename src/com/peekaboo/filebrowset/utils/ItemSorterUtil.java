@@ -12,6 +12,11 @@ import com.peekaboo.filebrowset.MyApplication;
 import com.peekaboo.filebrowset.SortOrder;
 import com.peekaboo.filebrowset.data.GoUpItemData;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class ItemSorterUtil {
 	private static final Map<SortOrder, Comparator<GridItemData>> ASC_COMPARATORS = new HashMap<SortOrder, Comparator<GridItemData>>();
 	private static final Map<SortOrder, Comparator<GridItemData>> DESC_COMPARATORS = new HashMap<SortOrder, Comparator<GridItemData>>();

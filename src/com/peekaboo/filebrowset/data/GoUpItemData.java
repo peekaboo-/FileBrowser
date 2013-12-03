@@ -4,6 +4,11 @@ import android.graphics.Bitmap;
 
 import com.peekaboo.filebrowset.GridItemData;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class GoUpItemData extends GridItemData{
 
 	public GoUpItemData(int nameId, Bitmap imageSource) {

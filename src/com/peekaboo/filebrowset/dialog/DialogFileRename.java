@@ -1,7 +1,6 @@
 package com.peekaboo.filebrowset.dialog;
 
 import java.io.File;
-import java.io.IOException;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -9,12 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.peekaboo.filebrowset.R;
 import com.peekaboo.filebrowset.handler.FileOperationHandler;
 import com.peekaboo.filebrowset.utils.FileUtil;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class DialogFileRename extends Dialog
 {
     private TextView mTextViewCurrentName = null;

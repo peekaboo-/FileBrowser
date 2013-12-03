@@ -14,6 +14,11 @@ import com.peekaboo.filebrowset.GridItemData;
 import com.peekaboo.filebrowset.SortOrder;
 import com.peekaboo.filebrowset.utils.ItemSorterUtil;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class PeekabooAdapter extends BaseAdapter {
 
 	protected List<GridItemData> mFileList = null;

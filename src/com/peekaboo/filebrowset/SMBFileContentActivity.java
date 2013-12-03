@@ -12,6 +12,11 @@ import com.peekaboo.filebrowset.smb.RemoteAccessUtil;
 import com.peekaboo.filebrowset.task.LoadingDialogTask;
 import com.peekaboo.filebrowset.task.LoadingDialogTask.OnLoadingListener;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class SMBFileContentActivity extends Activity {
 
 	private TextView mFileContentTextView = null;

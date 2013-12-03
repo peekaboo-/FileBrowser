@@ -19,6 +19,11 @@ import com.peekaboo.filebrowset.data.ViewType;
 import com.peekaboo.filebrowset.factory.FileIconFactory;
 import com.peekaboo.filebrowset.utils.FileUtil;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class FileBrowsetAdapter extends PeekabooAdapter {
 
 	private Context mContext = null;

@@ -12,6 +12,11 @@ import java.util.Locale;
 import android.content.Context;
 import android.widget.Toast;
 
+/**
+ * 
+ * @author peekaboo
+ *
+ */
 public class FileUtil
 {
 //    public static boolean copyFile(File srcFile, File destFile) throws IOException

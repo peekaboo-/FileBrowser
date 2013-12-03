@@ -27,7 +27,7 @@ import com.peekaboo.filebrowset.adapter.GridViewApplicationOpenListAdapter;
 
 /**
  * 
- * @author joy
+ * @author peekaboo
  *
  */
 public class DialogApplicationOpenList extends Dialog
@@ -97,15 +97,7 @@ public class DialogApplicationOpenList extends Dialog
                 ResolveInfo resolve_info = (ResolveInfo) view.getTag();
                 
                 if (mCheckBoxDefaultOpen.isChecked()) {
-//                    String appName = resolve_info.activityInfo.applicationInfo.loadLabel(mActivity.getPackageManager()).toString();
-//                    String pkg = resolve_info.activityInfo.packageName;
-//                    String cls = resolve_info.activityInfo.name;
-
-//                    if (OnyxAppPreferenceCenter.setAppPreference(mActivity, FileUtil.getFileExtension(mFile.getName()), appName, pkg, cls)) {
-                        Toast.makeText(mActivity, R.string.Succeed_setting, Toast.LENGTH_LONG).show();
-//                    } else {
-//                        Toast.makeText(mActivity, R.string.Fail_setting, Toast.LENGTH_SHORT).show();
-//                    }
+                	Toast.makeText(mActivity, R.string.Succeed_setting, Toast.LENGTH_LONG).show();
                 }
                 
                 ResolveInfo info = GridViewApplicationOpenListAdapter.getViewTag(view);
@@ -114,7 +106,6 @@ public class DialogApplicationOpenList extends Dialog
                 
                 
                 
-                //-----------------------------------------------------------------
                 String packageName = info.activityInfo.packageName;
                 String className = info.activityInfo.name;
                 Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -122,7 +113,6 @@ public class DialogApplicationOpenList extends Dialog
                 ComponentName cn = new ComponentName(packageName, className);
                 intent.setComponent(cn);
                 mActivity.startActivity(intent);
-              //-----------------------------------------------------------------
             }
         });
         
@@ -132,15 +122,7 @@ public class DialogApplicationOpenList extends Dialog
             @Override
             public void onClick(View v)
             {
-//                int height = mGridView.getHeight();
-//                
-//                if (mAdapter.getPaginator().canNextPage()) {
-//                    mAdapter.getPaginator().nextPage();
-//                }
-//                
-//                if (height != mGridView.getLayoutParams().height) {
-//                    mGridView.getLayoutParams().height = height;
-//                }
+            	//TODO
             }
         });
         
@@ -150,9 +132,7 @@ public class DialogApplicationOpenList extends Dialog
             @Override
             public void onClick(View v)
             {
-//                if (mAdapter.getPaginator().canPrevPage()) {
-//                    mAdapter.getPaginator().prevPage();
-//                }
+            	//TODO
             }
         });
         
@@ -173,16 +153,11 @@ public class DialogApplicationOpenList extends Dialog
         });
         
         mGridView.setAdapter(mAdapter);
-//        mAdapter.getPaginator().setPageSize(resolveInfoList.size());
     }
     
     private void updateTextViewPage()
     {
-//        final int current_page = mAdapter.getPaginator().getPageIndex() + 1;
-//        final int page_count = (mAdapter.getPaginator().getPageCount() != 0) ?
-//                mAdapter.getPaginator().getPageCount() : 1;
-//
-//        mTextViewPage.setText(String.valueOf(current_page) + "/" + String.valueOf(page_count));
+    	//TODO
     }
 
     @Override
