@@ -9,7 +9,6 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.widget.Toast;
 
 public class BaseActivity extends Activity {
@@ -28,41 +27,49 @@ public class BaseActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		mSharedPreferences = getSharedPreferences(CONFIG_USER_INFO, 0);
 		
-//		boolean sdCardExist = Environment.getExternalStorageState().equals(
-//				android.os.Environment.MEDIA_MOUNTED);
-//		if (sdCardExist) {
-//			Log.d(TAG, "SD Exist");
-//			mCurrentPath = Environment.getExternalStorageDirectory().getParent();
-//			mDefaultHomeDir = mSharedPreferences.getString(
-//					CONFIG_DEFAULT_HOME_DIR, mCurrentPath);
-//			System.out.println(" mDefaultHomeDir = " + mDefaultHomeDir);
-//			if (MyApplication.isSaveLastOpenFolder()) {
-//				mCurrentPath = mSharedPreferences.getString(
-//						LAST_OPEN_FOLDER, mCurrentPath);
-//			} else {
-//				mCurrentPath = mDefaultHomeDir;
-//			}
-//		} else {
-//			mCurrentPath = "/";
-//			Log.d(TAG, "SD No Exist");
-//		}
+		boolean sdCardExist = Environment.getExternalStorageState().equals(
+				android.os.Environment.MEDIA_MOUNTED);
+		if (sdCardExist) {
+			Log.d(TAG, "SD Exist");
+			mCurrentPath = Environment.getExternalStorageDirectory().getPath();
+			mDefaultHomeDir = mSharedPreferences.getString(
+					CONFIG_DEFAULT_HOME_DIR, mCurrentPath);
+			Log.d(TAG, "DefaultHomeDir = " + mDefaultHomeDir);
+			if (MyApplication.isSaveLastOpenFolder()) {
+				mCurrentPath = mSharedPreferences.getString(
+						LAST_OPEN_FOLDER, mCurrentPath);
+			} else {
+				mCurrentPath = mDefaultHomeDir;
+			}
+		} else {
+			mCurrentPath = "/";
+			Log.d(TAG, "SD No Exist");
+		}
+		Log.d(TAG, "CurrentPath = " + mCurrentPath);
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		System.out.println("aaa 弗雷的destroy");
 	}
 	
 	@Override
 	protected void onPause() {
 		super.onPause();
-//		if (MyApplication.isSaveLastOpenFolder()) {
-//			Editor config_editor = mSharedPreferences.edit();
-//			config_editor.putString(LAST_OPEN_FOLDER, mCurrentPath);
-//			config_editor.commit();
-//		}
+		if (MyApplication.isSaveLastOpenFolder()) {
+			Editor config_editor = mSharedPreferences.edit();
+			config_editor.putString(LAST_OPEN_FOLDER, mCurrentPath);
+			config_editor.commit();
+			System.out.println("aaa cun jin qu de  mCurrentPath = " + mCurrentPath);
+		}
 	}
 	
 //	@Override
 //	public boolean onKeyDown(int keyCode, KeyEvent event) {
 //		if (keyCode == KeyEvent.KEYCODE_BACK) {
-//			twoClickExit();
-//			return true;
+////			twoClickExit();
+////			return true;
 //		}
 //		return super.onKeyDown(keyCode, event);
 //	}
@@ -82,7 +89,7 @@ public class BaseActivity extends Activity {
 
 		} else {
 			finish();
-			System.exit(0);
+//			System.exit(0);
 		}
 	}
 }

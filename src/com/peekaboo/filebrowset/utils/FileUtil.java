@@ -106,6 +106,13 @@ public class FileUtil
        return result;
    }
    
+   public static String getParentPathByPath(String filePath) {
+	   if (filePath.endsWith(File.separator)) {
+		   filePath = filePath.substring(0, filePath.length() - 1);
+	   }
+	   return filePath.substring(0, filePath.lastIndexOf(File.separator));
+   }
+   
    /**
     * return file extension without heading dot
     * 

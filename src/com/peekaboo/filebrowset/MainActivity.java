@@ -6,15 +6,12 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -44,12 +41,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 		OnItemClickListener, OnItemLongClickListener {
 
 	private static final String TAG = "MainActivity";
-	private static final String CONFIG_USER_INFO = "user_info";
-	private final String CONFIG_DEFAULT_HOME_DIR = "default_home_dir";
-	private final String LAST_OPEN_FOLDER = "last_open_folder";
-	private String mDefaultHomeDir = null;
 	private GridView mFileListView = null;
-	private String mCurrentPath = null;
 	private FileBrowsetAdapter mFileBrowsetAdapter = null;
 	private File[] mFiles = null;
 	private File mCurrentFile = null;
@@ -70,39 +62,10 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 		this.mContext = this;
 		mSharedPreferences = getSharedPreferences(CONFIG_USER_INFO, 0);
 		mFileListView = (GridView) findViewById(R.id.file_listview);
-		// TextView backTextView = new TextView(this);
-		// backTextView.setText("..");
-		// System.out.println("genmulu = " +
-		// Environment.getRootDirectory().getPath());
-		// backImageView.setImageResource(R.drawable.go_up);
-		// backImageView.setLayoutParams(new LayoutParams(40, 40));
-		// mFileListView.addHeaderView(backImageView);
-
-		boolean sdCardExist = Environment.getExternalStorageState().equals(
-				android.os.Environment.MEDIA_MOUNTED);
-		if (sdCardExist) {
-			Log.d(TAG, "SD Exist");
-			mCurrentFile = Environment.getExternalStorageDirectory();
-			mDefaultHomeDir = mSharedPreferences.getString(
-					CONFIG_DEFAULT_HOME_DIR, mCurrentFile.getPath());
-			System.out.println(" mDefaultHomeDir = " + mDefaultHomeDir);
-			if (MyApplication.isSaveLastOpenFolder()) {
-				mCurrentPath = mSharedPreferences.getString(
-						LAST_OPEN_FOLDER, mCurrentFile.getPath());
-				System.out.println("aaaa = " + mCurrentPath);
-			} else {
-				System.out.println("bbb + " + mCurrentPath);
-				mCurrentPath = mDefaultHomeDir;
-			}
-			mCurrentFile = new File(mCurrentPath);
-		} else {
-			mCurrentFile = new File("/");
-			Log.d(TAG, "SD No Exist");
-		}
-
 		mFileListView.setOnItemClickListener(this);
 		mFileListView.setOnItemLongClickListener(this);
 
+		mCurrentFile = new File(mCurrentPath);
 		mCopyPasteLinearLayout = (LinearLayout) findViewById(R.id.copy_paste_layout);
 		mPasteButton = (Button) findViewById(R.id.paste);
 		mCancelButton = (Button) findViewById(R.id.cancel);
@@ -113,16 +76,16 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 		}
 	}
 
-	@Override
-	protected void onPause() {
-		super.onPause();
-		
-		if (MyApplication.isSaveLastOpenFolder()) {
-			Editor config_editor = mSharedPreferences.edit();
-			config_editor.putString(LAST_OPEN_FOLDER, mCurrentPath);
-			config_editor.commit();
-		}
-	}
+//	@Override
+//	protected void onPause() {
+//		super.onPause();
+////		System.out.println("aaa 之类的执行了");
+////		if (MyApplication.isSaveLastOpenFolder()) {
+////			Editor config_editor = mSharedPreferences.edit();
+////			config_editor.putString(LAST_OPEN_FOLDER, mCurrentPath);
+////			config_editor.commit();
+////		}
+//	}
 	
 	private List<GridItemData> getData(List<File> fileList) {
 		List<GridItemData> files = new ArrayList<GridItemData>();
@@ -175,7 +138,6 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 				if (file.canRead()) {
 					mFiles = file.listFiles();
 					mCurrentPath = file.getPath();
-					System.out.println("aaaaaaa = " + mCurrentPath);
 				} else {
 					runOnUiThread(new Runnable() {
 						public void run() {
@@ -226,7 +188,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		menu.clear();
-		if (mFileOperationHandler.getSourceItems().size() == 0) {
+		if (mFileOperationHandler != null && mFileOperationHandler.getSourceItems().size() == 0) {
 			MenuInflater menuInflater = getMenuInflater();
 			menuInflater.inflate(R.menu.main_menu, menu);
 		} else {
@@ -386,36 +348,36 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
-//			if (CopyService.getSourceItems().size() > 0) {
-//				mCopyPasteLinearLayout.setVisibility(View.GONE);
-//				mFileOperationHandler.getSourceItems().clear();
-//			} else {
-//				loadData(mCurrentFile.getParentFile());
-//			}
-			twoClickExit();
+			if (CopyService.getSourceItems().size() > 0) {
+				mCopyPasteLinearLayout.setVisibility(View.GONE);
+				mFileOperationHandler.getSourceItems().clear();
+			} else {
+				loadData(mCurrentFile.getParentFile());
+			}
+//			twoClickExit();
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
 	}
 
-	protected void twoClickExit() {
-		Timer tExit = null;
-		if (isExit == false) {
-			isExit = true; // 准备退出
-			Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
-			tExit = new Timer();
-			tExit.schedule(new TimerTask() {
-				@Override
-				public void run() {
-					isExit = false; // 取消退出
-				}
-			}, 2000); // 如果2秒钟内没有按下返回键，则启动定时器取消掉刚才执行的任务
-
-		} else {
-			finish();
-			System.exit(0);
-		}
-	}
+//	protected void twoClickExit() {
+//		Timer tExit = null;
+//		if (isExit == false) {
+//			isExit = true; // 准备退出
+//			Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+//			tExit = new Timer();
+//			tExit.schedule(new TimerTask() {
+//				@Override
+//				public void run() {
+//					isExit = false; // 取消退出
+//				}
+//			}, 2000); // 如果2秒钟内没有按下返回键，则启动定时器取消掉刚才执行的任务
+//
+//		} else {
+//			finish();
+//			System.exit(0);
+//		}
+//	}
 	
 	@Override
 	public void onClick(View v) {

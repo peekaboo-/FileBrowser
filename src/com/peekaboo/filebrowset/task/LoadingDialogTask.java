@@ -68,6 +68,7 @@ public class LoadingDialogTask extends AsyncTask<Object, Integer, Object>{
 	@Override
 	protected void onPostExecute(Object result) {
 		super.onPostExecute(result);
+		System.out.println("aaa 加载的结果为空");
 		if (result != null) {
 			this.notifyLoadingFinish(result);
 		} else {

@@ -1,7 +1,7 @@
 *.class
 bin/
 /gen
-.setdtings/
+.settings/
 # Package Files #
 *.war
 *.ear
