@@ -21,7 +21,7 @@ import com.peekaboo.filebrowset.adapter.PeekabooAdapter;
 import com.peekaboo.filebrowset.dialog.DialogApplicationOpenList;
 import com.peekaboo.filebrowset.dialog.DialogApplicationOpenList.OnApplicationSelectedListener;
 import com.peekaboo.filebrowset.dialog.DialogCreateFileOrFolder;
-import com.peekaboo.filebrowset.dialog.DialogFileProperty;
+import com.peekaboo.filebrowset.dialog.DialogFilePropertys;
 import com.peekaboo.filebrowset.dialog.DialogFileRemove;
 import com.peekaboo.filebrowset.dialog.DialogFileRename;
 import com.peekaboo.filebrowset.dialog.DialogOpenWith;
@@ -94,7 +94,7 @@ public class FileOperationHandler implements IFileOperation
             Toast.makeText(mContext, R.string.more_than_1_item, Toast.LENGTH_LONG).show();
             return;
         }
-        DialogFileProperty dlg = new DialogFileProperty(mContext, this);
+        DialogFilePropertys dlg = new DialogFilePropertys(mContext, this);
         dlg.show();
     }
 
